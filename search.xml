@@ -4,115 +4,11 @@
   
     
     <entry>
-      <title>melt反操作 pivot</title>
-      <link href="2021/12/03/melt%E5%8F%8D%E6%93%8D%E4%BD%9C%20pivot/"/>
-      <url>2021/12/03/melt%E5%8F%8D%E6%93%8D%E4%BD%9C%20pivot/</url>
-      
-        <content type="html"><![CDATA[<h1 id="melt反操作-pivot"><a href="#melt反操作-pivot" class="headerlink" title="melt反操作 pivot"></a>melt反操作 pivot</h1><p>origin.pivot(index&#x3D;’最左边的名字’, columns&#x3D;[列名])[‘取哪些值’]</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>pandas 从第几行开始读</title>
-      <link href="2021/12/03/pandas%20%E4%BB%8E%E7%AC%AC%E5%87%A0%E8%A1%8C%E5%BC%80%E5%A7%8B%E8%AF%BB/"/>
-      <url>2021/12/03/pandas%20%E4%BB%8E%E7%AC%AC%E5%87%A0%E8%A1%8C%E5%BC%80%E5%A7%8B%E8%AF%BB/</url>
-      
-        <content type="html"><![CDATA[<h1 id="pandas-从第几行开始读"><a href="#pandas-从第几行开始读" class="headerlink" title="pandas 从第几行开始读"></a>pandas 从第几行开始读</h1><p>import pandas as pd<br>df&#x3D;pd.read_excel(‘文件名’,header&#x3D;2)<br>print(df)</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>pandas groupby to list</title>
-      <link href="2021/12/03/pandas%20groupby%20to%20list%20/"/>
-      <url>2021/12/03/pandas%20groupby%20to%20list%20/</url>
-      
-        <content type="html"><![CDATA[<h1 id="pandas-groupby-to-list"><a href="#pandas-groupby-to-list" class="headerlink" title="pandas groupby to list"></a>pandas groupby to list</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dropna=False一定要写！！避免结果丢失</span></span><br><span class="line">groupby([<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>],,dropna=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Group Rows on &#x27;Courses&#x27; column and get List for &#x27;Fee&#x27; column</span></span><br><span class="line">df2 = df.groupby(<span class="string">&#x27;Courses&#x27;</span>)[<span class="string">&#x27;Fee&#x27;</span>].apply(<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Assign a Column Name to the groped list</span></span><br><span class="line">df2 = df.groupby(<span class="string">&#x27;Courses&#x27;</span>)[<span class="string">&#x27;Fee&#x27;</span>].apply(<span class="built_in">list</span>).reset_index(name=<span class="string">&quot;Course_Fee&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Group Rows into List</span></span><br><span class="line">df2 = df.groupby(<span class="string">&quot;Courses&quot;</span>).agg(&#123;<span class="string">&quot;Discount&quot;</span>: <span class="keyword">lambda</span> x: <span class="built_in">list</span>(x)&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Group Rows into List on All columns</span></span><br><span class="line">df2 = df.groupby(<span class="string">&quot;Courses&quot;</span>).agg(<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Other way</span></span><br><span class="line">df2 = df.groupby(<span class="string">&#x27;Courses&#x27;</span>).agg(pd.Series.tolist)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>pandas 删除某列</title>
-      <link href="2021/12/03/pandas%20%E5%88%A0%E9%99%A4%E6%9F%90%E5%88%97/"/>
-      <url>2021/12/03/pandas%20%E5%88%A0%E9%99%A4%E6%9F%90%E5%88%97/</url>
-      
-        <content type="html"><![CDATA[<h1 id="pandas-删除某列"><a href="#pandas-删除某列" class="headerlink" title="pandas 删除某列"></a>pandas 删除某列</h1><p>df.drop(columns&#x3D;[‘B’, ‘C’])</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>pandas 添加一列 在任意位置</title>
-      <link href="2021/12/03/pandas%20%E6%B7%BB%E5%8A%A0%E4%B8%80%E5%88%97%20%E5%9C%A8%E4%BB%BB%E6%84%8F%E4%BD%8D%E7%BD%AE/"/>
-      <url>2021/12/03/pandas%20%E6%B7%BB%E5%8A%A0%E4%B8%80%E5%88%97%20%E5%9C%A8%E4%BB%BB%E6%84%8F%E4%BD%8D%E7%BD%AE/</url>
-      
-        <content type="html"><![CDATA[<h1 id="pandas-添加一列-在任意位置"><a href="#pandas-添加一列-在任意位置" class="headerlink" title="pandas 添加一列 在任意位置"></a>pandas 添加一列 在任意位置</h1><p>df.insert(0,’关键词’,value&#x3D;’xxxx’,allow_duplicates&#x3D;True)</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>pandas修改列的顺序（移动列）</title>
-      <link href="2021/12/03/pandas%E4%BF%AE%E6%94%B9%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%EF%BC%88%E7%A7%BB%E5%8A%A8%E5%88%97%EF%BC%89/"/>
-      <url>2021/12/03/pandas%E4%BF%AE%E6%94%B9%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%EF%BC%88%E7%A7%BB%E5%8A%A8%E5%88%97%EF%BC%89/</url>
-      
-        <content type="html"><![CDATA[<h1 id="pandas修改列的顺序（移动列）"><a href="#pandas修改列的顺序（移动列）" class="headerlink" title="pandas修改列的顺序（移动列）"></a>pandas修改列的顺序（移动列）</h1><p>方法一：按照列名排序</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">data = pd.DataFrame([[1,2,3],</span><br><span class="line">                     [2,5,6],</span><br><span class="line">                     [3,8,9]], columns=[&#x27;b&#x27;, &#x27;c&#x27;,&#x27;a&#x27;])</span><br><span class="line">order = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]</span><br><span class="line">data = data[order]</span><br></pre></td></tr></table></figure><p>方法二：先把需要调整的列拿出来，再插入指定位置</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># d= data.drop(&#x27;a&#x27;,axis=1)</span></span><br><span class="line">d = data.pop(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">data.insert(<span class="number">0</span>,<span class="string">&#x27;a&#x27;</span>, d)   <span class="comment"># 在第1列的位置，添加列名为a的列d (d是数据)</span></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Pandas排序</title>
       <link href="2021/12/03/Pandas%E6%8E%92%E5%BA%8F/"/>
       <url>2021/12/03/Pandas%E6%8E%92%E5%BA%8F/</url>
       
         <content type="html"><![CDATA[<h1 id="Pandas排序"><a href="#Pandas排序" class="headerlink" title="Pandas排序"></a>Pandas排序</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df[df.Ticket == 1].nlargest(10, &#x27;Age&#x27;)[&#x27;Names&#x27;]</span><br><span class="line"></span><br><span class="line"># 按某一列排序</span><br><span class="line"></span><br><span class="line">final_df = df.sort_values(by=[&#x27;列名&#x27;], ascending=False)</span><br><span class="line"></span><br><span class="line">#按多列排序</span><br><span class="line">df = df.sort_values([&quot;b&quot;, &quot;c&quot;], ascending = (False, True))</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>pandas转字典 最快</title>
-      <link href="2021/12/03/pandas%E8%BD%AC%E5%AD%97%E5%85%B8%20%E6%9C%80%E5%BF%AB/"/>
-      <url>2021/12/03/pandas%E8%BD%AC%E5%AD%97%E5%85%B8%20%E6%9C%80%E5%BF%AB/</url>
-      
-        <content type="html"><![CDATA[<h1 id="pandas转字典-最快"><a href="#pandas转字典-最快" class="headerlink" title="pandas转字典 最快"></a>pandas转字典 最快</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">groupby = defaultdict(list)</span><br><span class="line">L = df.to_dict(&#x27;records&#x27;, into=dd)</span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#整体转</span><br><span class="line">D = df.set_index(&#x27;项目名称&#x27;).T.to_dict()</span><br><span class="line">D = df.set_index(&#x27;项目名称&#x27;).T.to_dict(list)</span><br><span class="line"></span><br><span class="line">D = dict(zip(data[&#x27;Date&#x27;],data[&#x27;Low&#x27;]))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">其次</span><br><span class="line">D = pd.Series(data[&#x27;Low&#x27;].values,index=data[&#x27;Date&#x27;]).to_dict()</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>pip remove all</title>
-      <link href="2021/12/03/pip%20remove%20all/"/>
-      <url>2021/12/03/pip%20remove%20all/</url>
-      
-        <content type="html"><![CDATA[<h1 id="pip-remove-all"><a href="#pip-remove-all" class="headerlink" title="pip remove all"></a>pip remove all</h1><p>pip freeze | xargs pip uninstall -y</p>]]></content>
       
       
       
@@ -134,32 +30,6 @@
     
     
     <entry>
-      <title>python pandas 删除全空行列-1</title>
-      <link href="2021/12/03/python%20pandas%20%E5%88%A0%E9%99%A4%E5%85%A8%E7%A9%BA%E8%A1%8C%E5%88%97-1/"/>
-      <url>2021/12/03/python%20pandas%20%E5%88%A0%E9%99%A4%E5%85%A8%E7%A9%BA%E8%A1%8C%E5%88%97-1/</url>
-      
-        <content type="html"><![CDATA[<h1 id="python-pandas-删除全空行列"><a href="#python-pandas-删除全空行列" class="headerlink" title="python pandas 删除全空行列"></a>python pandas 删除全空行列</h1><p>删除表中全部为NaN的行<br>df.dropna(axis&#x3D;0,how&#x3D;’all’)  </p><p>删除表中全部为NaN的列<br>df.dropna(axis&#x3D;1,how&#x3D;’all’) </p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>python string 转url</title>
-      <link href="2021/12/03/python%20string%20%E8%BD%ACurl/"/>
-      <url>2021/12/03/python%20string%20%E8%BD%ACurl/</url>
-      
-        <content type="html"><![CDATA[<h1 id="python-string-转url"><a href="#python-string-转url" class="headerlink" title="python string 转url"></a>python string 转url</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import urllib.parse</span><br><span class="line">safe_string = urllib.parse.quote(&#x27;snow peak&#x27;)</span><br><span class="line">print(safe_string)</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Python判断文件是否存在，若存在删除</title>
       <link href="2021/12/03/Python%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%8C%E8%8B%A5%E5%AD%98%E5%9C%A8%E5%88%A0%E9%99%A4/"/>
       <url>2021/12/03/Python%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%8C%E8%8B%A5%E5%AD%98%E5%9C%A8%E5%88%A0%E9%99%A4/</url>
@@ -173,11 +43,11 @@
     
     
     <entry>
-      <title>python格式化打印</title>
-      <link href="2021/12/03/python%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0/"/>
-      <url>2021/12/03/python%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0/</url>
+      <title>melt反操作 pivot</title>
+      <link href="2021/12/03/melt%E5%8F%8D%E6%93%8D%E4%BD%9C%20pivot/"/>
+      <url>2021/12/03/melt%E5%8F%8D%E6%93%8D%E4%BD%9C%20pivot/</url>
       
-        <content type="html"><![CDATA[<h1 id="python格式化打印"><a href="#python格式化打印" class="headerlink" title="python格式化打印"></a>python格式化打印</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;<span class="string">&#x27;Location: &#x27;</span> + location:&lt;<span class="number">25</span>&#125;</span> Revision: <span class="subst">&#123;revision&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;<span class="string">&#x27;District: &#x27;</span> + district:&lt;<span class="number">25</span>&#125;</span> Date: <span class="subst">&#123;date&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;<span class="string">&#x27;User: &#x27;</span> + user:&lt;<span class="number">25</span>&#125;</span> Time: <span class="subst">&#123;time&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line"></span><br><span class="line">Location: <span class="number">10</span>-<span class="number">10</span>-<span class="number">10</span>-<span class="number">10</span>     Revision: <span class="number">1</span></span><br><span class="line">District: Tower           Date: May <span class="number">16</span>, <span class="number">2012</span></span><br><span class="line">User: LOD                 Time: <span class="number">10</span>:<span class="number">15</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="melt反操作-pivot"><a href="#melt反操作-pivot" class="headerlink" title="melt反操作 pivot"></a>melt反操作 pivot</h1><p>origin.pivot(index&#x3D;’最左边的名字’, columns&#x3D;[列名])[‘取哪些值’]</p>]]></content>
       
       
       
@@ -186,11 +56,37 @@
     
     
     <entry>
-      <title>timestamp to time</title>
-      <link href="2021/12/03/timestamp%20to%20time/"/>
-      <url>2021/12/03/timestamp%20to%20time/</url>
+      <title>pandas groupby to list</title>
+      <link href="2021/12/03/pandas%20groupby%20to%20list%20/"/>
+      <url>2021/12/03/pandas%20groupby%20to%20list%20/</url>
       
-        <content type="html"><![CDATA[<h1 id="timestamp-to-time"><a href="#timestamp-to-time" class="headerlink" title="timestamp to time"></a>timestamp to time</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import datetime</span><br><span class="line">value = datetime.datetime.fromtimestamp(timestamp).strftime(&#x27;%Y-%m-%d %H:%M:%S&#x27;)</span><br><span class="line"></span><br><span class="line">#unix time要先处以1000</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="pandas-groupby-to-list"><a href="#pandas-groupby-to-list" class="headerlink" title="pandas groupby to list"></a>pandas groupby to list</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># dropna=False一定要写！！避免结果丢失</span></span><br><span class="line">groupby([<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>],,dropna=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Group Rows on &#x27;Courses&#x27; column and get List for &#x27;Fee&#x27; column</span></span><br><span class="line">df2 = df.groupby(<span class="string">&#x27;Courses&#x27;</span>)[<span class="string">&#x27;Fee&#x27;</span>].apply(<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Assign a Column Name to the groped list</span></span><br><span class="line">df2 = df.groupby(<span class="string">&#x27;Courses&#x27;</span>)[<span class="string">&#x27;Fee&#x27;</span>].apply(<span class="built_in">list</span>).reset_index(name=<span class="string">&quot;Course_Fee&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Group Rows into List</span></span><br><span class="line">df2 = df.groupby(<span class="string">&quot;Courses&quot;</span>).agg(&#123;<span class="string">&quot;Discount&quot;</span>: <span class="keyword">lambda</span> x: <span class="built_in">list</span>(x)&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Group Rows into List on All columns</span></span><br><span class="line">df2 = df.groupby(<span class="string">&quot;Courses&quot;</span>).agg(<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Other way</span></span><br><span class="line">df2 = df.groupby(<span class="string">&#x27;Courses&#x27;</span>).agg(pd.Series.tolist)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pandas 从第几行开始读</title>
+      <link href="2021/12/03/pandas%20%E4%BB%8E%E7%AC%AC%E5%87%A0%E8%A1%8C%E5%BC%80%E5%A7%8B%E8%AF%BB/"/>
+      <url>2021/12/03/pandas%20%E4%BB%8E%E7%AC%AC%E5%87%A0%E8%A1%8C%E5%BC%80%E5%A7%8B%E8%AF%BB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pandas-从第几行开始读"><a href="#pandas-从第几行开始读" class="headerlink" title="pandas 从第几行开始读"></a>pandas 从第几行开始读</h1><p>import pandas as pd<br>df&#x3D;pd.read_excel(‘文件名’,header&#x3D;2)<br>print(df)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pandas 删除某列</title>
+      <link href="2021/12/03/pandas%20%E5%88%A0%E9%99%A4%E6%9F%90%E5%88%97/"/>
+      <url>2021/12/03/pandas%20%E5%88%A0%E9%99%A4%E6%9F%90%E5%88%97/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pandas-删除某列"><a href="#pandas-删除某列" class="headerlink" title="pandas 删除某列"></a>pandas 删除某列</h1><p>df.drop(columns&#x3D;[‘B’, ‘C’])</p>]]></content>
       
       
       
@@ -204,6 +100,58 @@
       <url>2021/12/03/json%E5%A4%84%E7%90%86/</url>
       
         <content type="html"><![CDATA[<h1 id="json处理"><a href="#json处理" class="headerlink" title="json处理"></a>json处理</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import simplejson as json</span><br><span class="line"></span><br><span class="line"># ⭐️从文件直接读取</span><br><span class="line">from pathlib import Path</span><br><span class="line">filename = Path(__file__).parent / &#x27;lj.json&#x27;</span><br><span class="line">J = json.loads(filename.read_text(encoding=&#x27;UTF-8&#x27;))</span><br><span class="line"></span><br><span class="line"># 字符串 --&gt; json</span><br><span class="line">json.loads() takes in a string and returns a json object.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># json --&gt; 字符串</span><br><span class="line">json.dumps() takes in a json object and returns a string.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import simplejson as json</span><br><span class="line">jprint = lambda x: print(json.dumps(x, sort_keys=True, indent=4 * &quot; &quot;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pandas 添加一列 在任意位置</title>
+      <link href="2021/12/03/pandas%20%E6%B7%BB%E5%8A%A0%E4%B8%80%E5%88%97%20%E5%9C%A8%E4%BB%BB%E6%84%8F%E4%BD%8D%E7%BD%AE/"/>
+      <url>2021/12/03/pandas%20%E6%B7%BB%E5%8A%A0%E4%B8%80%E5%88%97%20%E5%9C%A8%E4%BB%BB%E6%84%8F%E4%BD%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pandas-添加一列-在任意位置"><a href="#pandas-添加一列-在任意位置" class="headerlink" title="pandas 添加一列 在任意位置"></a>pandas 添加一列 在任意位置</h1><p>df.insert(0,’关键词’,value&#x3D;’xxxx’,allow_duplicates&#x3D;True)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pandas转字典 最快</title>
+      <link href="2021/12/03/pandas%E8%BD%AC%E5%AD%97%E5%85%B8%20%E6%9C%80%E5%BF%AB/"/>
+      <url>2021/12/03/pandas%E8%BD%AC%E5%AD%97%E5%85%B8%20%E6%9C%80%E5%BF%AB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pandas转字典-最快"><a href="#pandas转字典-最快" class="headerlink" title="pandas转字典 最快"></a>pandas转字典 最快</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">groupby = defaultdict(list)</span><br><span class="line">L = df.to_dict(&#x27;records&#x27;, into=dd)</span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#整体转</span><br><span class="line">D = df.set_index(&#x27;项目名称&#x27;).T.to_dict()</span><br><span class="line">D = df.set_index(&#x27;项目名称&#x27;).T.to_dict(list)</span><br><span class="line"></span><br><span class="line">D = dict(zip(data[&#x27;Date&#x27;],data[&#x27;Low&#x27;]))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">其次</span><br><span class="line">D = pd.Series(data[&#x27;Low&#x27;].values,index=data[&#x27;Date&#x27;]).to_dict()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pandas修改列的顺序（移动列）</title>
+      <link href="2021/12/03/pandas%E4%BF%AE%E6%94%B9%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%EF%BC%88%E7%A7%BB%E5%8A%A8%E5%88%97%EF%BC%89/"/>
+      <url>2021/12/03/pandas%E4%BF%AE%E6%94%B9%E5%88%97%E7%9A%84%E9%A1%BA%E5%BA%8F%EF%BC%88%E7%A7%BB%E5%8A%A8%E5%88%97%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pandas修改列的顺序（移动列）"><a href="#pandas修改列的顺序（移动列）" class="headerlink" title="pandas修改列的顺序（移动列）"></a>pandas修改列的顺序（移动列）</h1><p>方法一：按照列名排序</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line"></span><br><span class="line">data = pd.DataFrame([[1,2,3],</span><br><span class="line">                     [2,5,6],</span><br><span class="line">                     [3,8,9]], columns=[&#x27;b&#x27;, &#x27;c&#x27;,&#x27;a&#x27;])</span><br><span class="line">order = [&#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;]</span><br><span class="line">data = data[order]</span><br></pre></td></tr></table></figure><p>方法二：先把需要调整的列拿出来，再插入指定位置</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># d= data.drop(&#x27;a&#x27;,axis=1)</span></span><br><span class="line">d = data.pop(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">data.insert(<span class="number">0</span>,<span class="string">&#x27;a&#x27;</span>, d)   <span class="comment"># 在第1列的位置，添加列名为a的列d (d是数据)</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python pandas 删除全空行列-1</title>
+      <link href="2021/12/03/python%20pandas%20%E5%88%A0%E9%99%A4%E5%85%A8%E7%A9%BA%E8%A1%8C%E5%88%97-1/"/>
+      <url>2021/12/03/python%20pandas%20%E5%88%A0%E9%99%A4%E5%85%A8%E7%A9%BA%E8%A1%8C%E5%88%97-1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python-pandas-删除全空行列"><a href="#python-pandas-删除全空行列" class="headerlink" title="python pandas 删除全空行列"></a>python pandas 删除全空行列</h1><p>删除表中全部为NaN的行<br>df.dropna(axis&#x3D;0,how&#x3D;’all’)  </p><p>删除表中全部为NaN的列<br>df.dropna(axis&#x3D;1,how&#x3D;’all’) </p>]]></content>
       
       
       
@@ -251,11 +199,63 @@
     
     
     <entry>
+      <title>python string 转url</title>
+      <link href="2021/12/03/python%20string%20%E8%BD%ACurl/"/>
+      <url>2021/12/03/python%20string%20%E8%BD%ACurl/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python-string-转url"><a href="#python-string-转url" class="headerlink" title="python string 转url"></a>python string 转url</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import urllib.parse</span><br><span class="line">safe_string = urllib.parse.quote(&#x27;snow peak&#x27;)</span><br><span class="line">print(safe_string)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python timedelta 一个月后</title>
       <link href="2021/12/03/python%20timedelta%20%E4%B8%80%E4%B8%AA%E6%9C%88%E5%90%8E/"/>
       <url>2021/12/03/python%20timedelta%20%E4%B8%80%E4%B8%AA%E6%9C%88%E5%90%8E/</url>
       
         <content type="html"><![CDATA[<h1 id="python-timedelta-一个月后"><a href="#python-timedelta-一个月后" class="headerlink" title="python timedelta 一个月后"></a>python timedelta 一个月后</h1><p>pip install python-dateutil</p><p><a href="https://dateutil.readthedocs.io/en/stable/examples.html">https://dateutil.readthedocs.io/en/stable/examples.html</a></p><p>datetime.datetime(2022, 4, 20) + dateutil.relativedelta.relativedelta(months&#x3D;_)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python格式化打印</title>
+      <link href="2021/12/03/python%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0/"/>
+      <url>2021/12/03/python%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python格式化打印"><a href="#python格式化打印" class="headerlink" title="python格式化打印"></a>python格式化打印</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;<span class="string">&#x27;Location: &#x27;</span> + location:&lt;<span class="number">25</span>&#125;</span> Revision: <span class="subst">&#123;revision&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;<span class="string">&#x27;District: &#x27;</span> + district:&lt;<span class="number">25</span>&#125;</span> Date: <span class="subst">&#123;date&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;<span class="string">&#x27;User: &#x27;</span> + user:&lt;<span class="number">25</span>&#125;</span> Time: <span class="subst">&#123;time&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line"></span><br><span class="line">Location: <span class="number">10</span>-<span class="number">10</span>-<span class="number">10</span>-<span class="number">10</span>     Revision: <span class="number">1</span></span><br><span class="line">District: Tower           Date: May <span class="number">16</span>, <span class="number">2012</span></span><br><span class="line">User: LOD                 Time: <span class="number">10</span>:<span class="number">15</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>timestamp to time</title>
+      <link href="2021/12/03/timestamp%20to%20time/"/>
+      <url>2021/12/03/timestamp%20to%20time/</url>
+      
+        <content type="html"><![CDATA[<h1 id="timestamp-to-time"><a href="#timestamp-to-time" class="headerlink" title="timestamp to time"></a>timestamp to time</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import datetime</span><br><span class="line">value = datetime.datetime.fromtimestamp(timestamp).strftime(&#x27;%Y-%m-%d %H:%M:%S&#x27;)</span><br><span class="line"></span><br><span class="line">#unix time要先处以1000</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pip remove all</title>
+      <link href="2021/12/03/pip%20remove%20all/"/>
+      <url>2021/12/03/pip%20remove%20all/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pip-remove-all"><a href="#pip-remove-all" class="headerlink" title="pip remove all"></a>pip remove all</h1><p>pip freeze | xargs pip uninstall -y</p>]]></content>
       
       
       
