@@ -30,11 +30,50 @@
     
     
     <entry>
-      <title>Python判断文件是否存在，若存在删除</title>
-      <link href="2021/12/03/Python%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%8C%E8%8B%A5%E5%AD%98%E5%9C%A8%E5%88%A0%E9%99%A4/"/>
-      <url>2021/12/03/Python%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%8C%E8%8B%A5%E5%AD%98%E5%9C%A8%E5%88%A0%E9%99%A4/</url>
+      <title>json处理</title>
+      <link href="2021/12/03/json%E5%A4%84%E7%90%86/"/>
+      <url>2021/12/03/json%E5%A4%84%E7%90%86/</url>
       
-        <content type="html"><![CDATA[<h1 id="Python判断文件是否存在，若存在删除"><a href="#Python判断文件是否存在，若存在删除" class="headerlink" title="Python判断文件是否存在，若存在删除"></a>Python判断文件是否存在，若存在删除</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">⭐️删除用</span><br><span class="line">import shutil</span><br><span class="line">shutil.rmtree(path)</span><br><span class="line"></span><br><span class="line">方法1. pathlib</span><br><span class="line"></span><br><span class="line">from pathlib import Path</span><br><span class="line"></span><br><span class="line">my_file = Path(&quot;./dir1/dir2/file.txt&quot;)</span><br><span class="line"></span><br><span class="line"># Python 3.8+</span><br><span class="line">my_file.unlink(missing_ok=True)</span><br><span class="line"></span><br><span class="line"># Python 3.7 and earlier</span><br><span class="line">if my_file.exists():</span><br><span class="line">    my_file.unlink()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法2。os</span><br><span class="line">import os</span><br><span class="line"># 判断文件是否存在</span><br><span class="line">if (os.path.exists(filepath)) :</span><br><span class="line">#存在，则删除文件</span><br><span class="line">os.remove(filepath)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#判断文件是否存在,path为文件路径</span><br><span class="line">import os</span><br><span class="line">os.path.exists(path)</span><br><span class="line">#删除文件,path为文件路径</span><br><span class="line">import os</span><br><span class="line">os.remove(path)</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="json处理"><a href="#json处理" class="headerlink" title="json处理"></a>json处理</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import simplejson as json</span><br><span class="line"></span><br><span class="line"># ⭐️从文件直接读取</span><br><span class="line">from pathlib import Path</span><br><span class="line">filename = Path(__file__).parent / &#x27;lj.json&#x27;</span><br><span class="line">J = json.loads(filename.read_text(encoding=&#x27;UTF-8&#x27;))</span><br><span class="line"></span><br><span class="line"># 字符串 --&gt; json</span><br><span class="line">json.loads() takes in a string and returns a json object.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># json --&gt; 字符串</span><br><span class="line">json.dumps() takes in a json object and returns a string.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import simplejson as json</span><br><span class="line">jprint = lambda x: print(json.dumps(x, sort_keys=True, indent=4 * &quot; &quot;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>json.dumps中文乱码</title>
+      <link href="2021/12/03/json.dumps%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
+      <url>2021/12/03/json.dumps%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<h1 id="json-dumps中文乱码"><a href="#json-dumps中文乱码" class="headerlink" title="json.dumps中文乱码"></a>json.dumps中文乱码</h1><p>json.dumps(o, ensure_ascii&#x3D;False)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Python获取当前时间</title>
+      <link href="2021/12/03/Python%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4/"/>
+      <url>2021/12/03/Python%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Python获取当前时间"><a href="#Python获取当前时间" class="headerlink" title="Python获取当前时间"></a>Python获取当前时间</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from datetime import datetime</span><br><span class="line">now = datetime.now().strftime(&quot;%Y/%m/%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from datetime import datetime</span><br><span class="line">now = datetime.now().strftime(&quot;%Y/%m/%d %H:%M:%S:%f&quot;)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>key-value dict 转dataframe  pandas</title>
+      <link href="2021/12/03/key-value%20dict%20%E8%BD%ACdataframe%20%20pandas/"/>
+      <url>2021/12/03/key-value%20dict%20%E8%BD%ACdataframe%20%20pandas/</url>
+      
+        <content type="html"><![CDATA[<h1 id="key-value-dict-转dataframe-pandas"><a href="#key-value-dict-转dataframe-pandas" class="headerlink" title="key-value dict 转dataframe  pandas"></a>key-value dict 转dataframe  pandas</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">!!python3要转为list</span><br><span class="line">pd.DataFrame(d.items())  # or list(d.items()) in python 3</span><br><span class="line">pd.DataFrame(d.items(), columns=[&#x27;Date&#x27;, &#x27;DateValue&#x27;])</span><br><span class="line"></span><br><span class="line">pd.DataFrame(list(D.items()), columns=[&#x27;Date&#x27;, &#x27;DateValue&#x27;])</span><br></pre></td></tr></table></figure><p>如果是table，用这个格式</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D = &#123;&#x27;row1&#x27;: &#123;&#x27;col1&#x27;: 1, &#x27;col2&#x27;: 0.5&#125;, &#x27;row2&#x27;: &#123;&#x27;col1&#x27;: 2, &#x27;col2&#x27;: 0.75&#125;&#125;</span><br><span class="line">#orient可选index：row1，row2作为行</span><br><span class="line">#orient可选columns，row1，row2作为列</span><br><span class="line">df = pd.DataFrame.from_dict(D,orient=&#x27;index&#x27;) </span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -69,11 +108,11 @@
     
     
     <entry>
-      <title>pandas 从第几行开始读</title>
-      <link href="2021/12/03/pandas%20%E4%BB%8E%E7%AC%AC%E5%87%A0%E8%A1%8C%E5%BC%80%E5%A7%8B%E8%AF%BB/"/>
-      <url>2021/12/03/pandas%20%E4%BB%8E%E7%AC%AC%E5%87%A0%E8%A1%8C%E5%BC%80%E5%A7%8B%E8%AF%BB/</url>
+      <title>pandas index 转column</title>
+      <link href="2021/12/03/pandas%20index%20%E8%BD%ACcolumn/"/>
+      <url>2021/12/03/pandas%20index%20%E8%BD%ACcolumn/</url>
       
-        <content type="html"><![CDATA[<h1 id="pandas-从第几行开始读"><a href="#pandas-从第几行开始读" class="headerlink" title="pandas 从第几行开始读"></a>pandas 从第几行开始读</h1><p>import pandas as pd<br>df&#x3D;pd.read_excel(‘文件名’,header&#x3D;2)<br>print(df)</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="pandas-index-转column"><a href="#pandas-index-转column" class="headerlink" title="pandas index 转column"></a>pandas index 转column</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># index改名</span><br><span class="line">data.index.name = &#x27;foo&#x27;</span><br><span class="line">data = data.reset_index()</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -95,11 +134,24 @@
     
     
     <entry>
-      <title>json处理</title>
-      <link href="2021/12/03/json%E5%A4%84%E7%90%86/"/>
-      <url>2021/12/03/json%E5%A4%84%E7%90%86/</url>
+      <title>Python判断文件是否存在，若存在删除</title>
+      <link href="2021/12/03/Python%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%8C%E8%8B%A5%E5%AD%98%E5%9C%A8%E5%88%A0%E9%99%A4/"/>
+      <url>2021/12/03/Python%E5%88%A4%E6%96%AD%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8%EF%BC%8C%E8%8B%A5%E5%AD%98%E5%9C%A8%E5%88%A0%E9%99%A4/</url>
       
-        <content type="html"><![CDATA[<h1 id="json处理"><a href="#json处理" class="headerlink" title="json处理"></a>json处理</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import simplejson as json</span><br><span class="line"></span><br><span class="line"># ⭐️从文件直接读取</span><br><span class="line">from pathlib import Path</span><br><span class="line">filename = Path(__file__).parent / &#x27;lj.json&#x27;</span><br><span class="line">J = json.loads(filename.read_text(encoding=&#x27;UTF-8&#x27;))</span><br><span class="line"></span><br><span class="line"># 字符串 --&gt; json</span><br><span class="line">json.loads() takes in a string and returns a json object.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># json --&gt; 字符串</span><br><span class="line">json.dumps() takes in a json object and returns a string.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import simplejson as json</span><br><span class="line">jprint = lambda x: print(json.dumps(x, sort_keys=True, indent=4 * &quot; &quot;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="Python判断文件是否存在，若存在删除"><a href="#Python判断文件是否存在，若存在删除" class="headerlink" title="Python判断文件是否存在，若存在删除"></a>Python判断文件是否存在，若存在删除</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">⭐️删除用</span><br><span class="line">import shutil</span><br><span class="line">shutil.rmtree(path)</span><br><span class="line"></span><br><span class="line">方法1. pathlib</span><br><span class="line"></span><br><span class="line">from pathlib import Path</span><br><span class="line"></span><br><span class="line">my_file = Path(&quot;./dir1/dir2/file.txt&quot;)</span><br><span class="line"></span><br><span class="line"># Python 3.8+</span><br><span class="line">my_file.unlink(missing_ok=True)</span><br><span class="line"></span><br><span class="line"># Python 3.7 and earlier</span><br><span class="line">if my_file.exists():</span><br><span class="line">    my_file.unlink()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法2。os</span><br><span class="line">import os</span><br><span class="line"># 判断文件是否存在</span><br><span class="line">if (os.path.exists(filepath)) :</span><br><span class="line">#存在，则删除文件</span><br><span class="line">os.remove(filepath)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#判断文件是否存在,path为文件路径</span><br><span class="line">import os</span><br><span class="line">os.path.exists(path)</span><br><span class="line">#删除文件,path为文件路径</span><br><span class="line">import os</span><br><span class="line">os.remove(path)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pandas 从第几行开始读</title>
+      <link href="2021/12/03/pandas%20%E4%BB%8E%E7%AC%AC%E5%87%A0%E8%A1%8C%E5%BC%80%E5%A7%8B%E8%AF%BB/"/>
+      <url>2021/12/03/pandas%20%E4%BB%8E%E7%AC%AC%E5%87%A0%E8%A1%8C%E5%BC%80%E5%A7%8B%E8%AF%BB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pandas-从第几行开始读"><a href="#pandas-从第几行开始读" class="headerlink" title="pandas 从第几行开始读"></a>pandas 从第几行开始读</h1><p>import pandas as pd<br>df&#x3D;pd.read_excel(‘文件名’,header&#x3D;2)<br>print(df)</p>]]></content>
       
       
       
@@ -147,19 +199,6 @@
     
     
     <entry>
-      <title>python pandas 删除全空行列-1</title>
-      <link href="2021/12/03/python%20pandas%20%E5%88%A0%E9%99%A4%E5%85%A8%E7%A9%BA%E8%A1%8C%E5%88%97-1/"/>
-      <url>2021/12/03/python%20pandas%20%E5%88%A0%E9%99%A4%E5%85%A8%E7%A9%BA%E8%A1%8C%E5%88%97-1/</url>
-      
-        <content type="html"><![CDATA[<h1 id="python-pandas-删除全空行列"><a href="#python-pandas-删除全空行列" class="headerlink" title="python pandas 删除全空行列"></a>python pandas 删除全空行列</h1><p>删除表中全部为NaN的行<br>df.dropna(axis&#x3D;0,how&#x3D;’all’)  </p><p>删除表中全部为NaN的列<br>df.dropna(axis&#x3D;1,how&#x3D;’all’) </p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>pip换源</title>
       <link href="2021/12/03/pip%E6%8D%A2%E6%BA%90/"/>
       <url>2021/12/03/pip%E6%8D%A2%E6%BA%90/</url>
@@ -186,11 +225,11 @@
     
     
     <entry>
-      <title>python requests关闭ssl验证</title>
-      <link href="2021/12/03/python%20requests%E5%85%B3%E9%97%ADssl%E9%AA%8C%E8%AF%81/"/>
-      <url>2021/12/03/python%20requests%E5%85%B3%E9%97%ADssl%E9%AA%8C%E8%AF%81/</url>
+      <title>python pandas 反转columns reverse</title>
+      <link href="2021/12/03/python%20pandas%20%E5%8F%8D%E8%BD%ACcolumns%20reverse/"/>
+      <url>2021/12/03/python%20pandas%20%E5%8F%8D%E8%BD%ACcolumns%20reverse/</url>
       
-        <content type="html"><![CDATA[<h1 id="python-requests关闭ssl验证"><a href="#python-requests关闭ssl验证" class="headerlink" title="python requests关闭ssl验证"></a>python requests关闭ssl验证</h1><p>首先我们要看下是不是打开抓包工具，如果打开了抓包工具，那么请先关闭它，因为开启它之后运行python会自动改变端口，造成ssl错误。<br>直接在请求时关闭证书验证，即在请求的时候带上 verify &#x3D;False，代码如下图:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response = requests.get(&quot;url&quot;, verify = False)</span><br></pre></td></tr></table></figure><p>Python3 提示warning 添加如下三种任意一种代码即可解决：</p><p>方式1：</p><p>import requests<br>requests.packages.urllib3.disable_warnings<br>方式2：</p><p>import warnings<br>warnings.filterwarnings(“ignore”)<br>方式3：</p><p>import urllib3<br>urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)<br>————————————————</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="python-pandas-反转columns-reverse"><a href="#python-pandas-反转columns-reverse" class="headerlink" title="python pandas 反转columns reverse"></a>python pandas 反转columns reverse</h1><p>index不变</p><p>法1</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 不包含index</span><br><span class="line">football = football[football.columns[::-1]]</span><br></pre></td></tr></table></figure><p>法2</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">football = football.iloc[:, ::-1]</span><br><span class="line"></span><br><span class="line">The first : means &quot;take all rows&quot;, the ::-1 means step backwards through the columns.</span><br><span class="line">The loc indexer mentioned in @PietroBattiston&#x27;s answer works in the same way.</span><br></pre></td></tr></table></figure><p>法3</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">football = football[reversed(football.columns)]</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -199,11 +238,24 @@
     
     
     <entry>
-      <title>python string 转url</title>
-      <link href="2021/12/03/python%20string%20%E8%BD%ACurl/"/>
-      <url>2021/12/03/python%20string%20%E8%BD%ACurl/</url>
+      <title>python pandas 删除全空行列-1</title>
+      <link href="2021/12/03/python%20pandas%20%E5%88%A0%E9%99%A4%E5%85%A8%E7%A9%BA%E8%A1%8C%E5%88%97-1/"/>
+      <url>2021/12/03/python%20pandas%20%E5%88%A0%E9%99%A4%E5%85%A8%E7%A9%BA%E8%A1%8C%E5%88%97-1/</url>
       
-        <content type="html"><![CDATA[<h1 id="python-string-转url"><a href="#python-string-转url" class="headerlink" title="python string 转url"></a>python string 转url</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import urllib.parse</span><br><span class="line">safe_string = urllib.parse.quote(&#x27;snow peak&#x27;)</span><br><span class="line">print(safe_string)</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="python-pandas-删除全空行列"><a href="#python-pandas-删除全空行列" class="headerlink" title="python pandas 删除全空行列"></a>python pandas 删除全空行列</h1><p>删除表中全部为NaN的行<br>df.dropna(axis&#x3D;0,how&#x3D;’all’)  </p><p>删除表中全部为NaN的列<br>df.dropna(axis&#x3D;1,how&#x3D;’all’) </p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python requests关闭ssl验证</title>
+      <link href="2021/12/03/python%20requests%E5%85%B3%E9%97%ADssl%E9%AA%8C%E8%AF%81/"/>
+      <url>2021/12/03/python%20requests%E5%85%B3%E9%97%ADssl%E9%AA%8C%E8%AF%81/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python-requests关闭ssl验证"><a href="#python-requests关闭ssl验证" class="headerlink" title="python requests关闭ssl验证"></a>python requests关闭ssl验证</h1><p>首先我们要看下是不是打开抓包工具，如果打开了抓包工具，那么请先关闭它，因为开启它之后运行python会自动改变端口，造成ssl错误。<br>直接在请求时关闭证书验证，即在请求的时候带上 verify &#x3D;False，代码如下图:</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response = requests.get(&quot;url&quot;, verify = False)</span><br></pre></td></tr></table></figure><p>Python3 提示warning 添加如下三种任意一种代码即可解决：</p><p>方式1：</p><p>import requests<br>requests.packages.urllib3.disable_warnings<br>方式2：</p><p>import warnings<br>warnings.filterwarnings(“ignore”)<br>方式3：</p><p>import urllib3<br>urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)<br>————————————————</p>]]></content>
       
       
       
@@ -225,11 +277,89 @@
     
     
     <entry>
+      <title>python string 转url</title>
+      <link href="2021/12/03/python%20string%20%E8%BD%ACurl/"/>
+      <url>2021/12/03/python%20string%20%E8%BD%ACurl/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python-string-转url"><a href="#python-string-转url" class="headerlink" title="python string 转url"></a>python string 转url</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import urllib.parse</span><br><span class="line">safe_string = urllib.parse.quote(&#x27;snow peak&#x27;)</span><br><span class="line">print(safe_string)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python try 直到成功（直到n次）</title>
+      <link href="2021/12/03/python%20try%20%E7%9B%B4%E5%88%B0%E6%88%90%E5%8A%9F%EF%BC%88%E7%9B%B4%E5%88%B0n%E6%AC%A1%EF%BC%89/"/>
+      <url>2021/12/03/python%20try%20%E7%9B%B4%E5%88%B0%E6%88%90%E5%8A%9F%EF%BC%88%E7%9B%B4%E5%88%B0n%E6%AC%A1%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python-try-直到成功（直到n次）"><a href="#python-try-直到成功（直到n次）" class="headerlink" title="python try 直到成功（直到n次）"></a>python try 直到成功（直到n次）</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">while True:</span><br><span class="line">    try:</span><br><span class="line">        # try code</span><br><span class="line">        break # quit the loop if successful</span><br><span class="line">    except:</span><br><span class="line">        # error handling</span><br><span class="line">        </span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for _ in range(5):</span><br><span class="line">    try:</span><br><span class="line">        # try code</span><br><span class="line">        break # quit the loop if successful</span><br><span class="line">    except:</span><br><span class="line">        # error handling</span><br><span class="line">        </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python 快速启动服务器 文件分享</title>
+      <link href="2021/12/03/python%20%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%20%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/"/>
+      <url>2021/12/03/python%20%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%20%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python-快速启动服务器-文件分享"><a href="#python-快速启动服务器-文件分享" class="headerlink" title="python 快速启动服务器 文件分享"></a>python 快速启动服务器 文件分享</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd 到目录</span><br><span class="line">python -m http.server 8080</span><br><span class="line">python -m http.server 8000 --bind 127.0.0.1</span><br><span class="line"></span><br><span class="line">python -m http.server 2333</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python去掉换行制表\n\r\t</title>
+      <link href="2021/12/03/python%E5%8E%BB%E6%8E%89%E6%8D%A2%E8%A1%8C%E5%88%B6%E8%A1%A8%5Cn%5Cr%5Ct/"/>
+      <url>2021/12/03/python%E5%8E%BB%E6%8E%89%E6%8D%A2%E8%A1%8C%E5%88%B6%E8%A1%A8%5Cn%5Cr%5Ct/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python去掉换行制表-n-r-t"><a href="#python去掉换行制表-n-r-t" class="headerlink" title="python去掉换行制表\n\r\t"></a>python去掉换行制表\n\r\t</h1><p>用split()就可以</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>text = <span class="string">&#x27;   foo\tbar\r\nFred  Nurke\t Joe Smith\n\n&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27; &#x27;</span>.join(text.split())</span><br><span class="line"><span class="string">&#x27;foo bar Fred Nurke Joe Smith&#x27;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python格式化打印</title>
       <link href="2021/12/03/python%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0/"/>
       <url>2021/12/03/python%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%89%93%E5%8D%B0/</url>
       
         <content type="html"><![CDATA[<h1 id="python格式化打印"><a href="#python格式化打印" class="headerlink" title="python格式化打印"></a>python格式化打印</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;<span class="string">&#x27;Location: &#x27;</span> + location:&lt;<span class="number">25</span>&#125;</span> Revision: <span class="subst">&#123;revision&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;<span class="string">&#x27;District: &#x27;</span> + district:&lt;<span class="number">25</span>&#125;</span> Date: <span class="subst">&#123;date&#125;</span>&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;<span class="subst">&#123;<span class="string">&#x27;User: &#x27;</span> + user:&lt;<span class="number">25</span>&#125;</span> Time: <span class="subst">&#123;time&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line"></span><br><span class="line">Location: <span class="number">10</span>-<span class="number">10</span>-<span class="number">10</span>-<span class="number">10</span>     Revision: <span class="number">1</span></span><br><span class="line">District: Tower           Date: May <span class="number">16</span>, <span class="number">2012</span></span><br><span class="line">User: LOD                 Time: <span class="number">10</span>:<span class="number">15</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python import from sibling directory子目录引入 另一个目录</title>
+      <link href="2021/12/03/python%20import%20from%20sibling%20directory%E5%AD%90%E7%9B%AE%E5%BD%95%E5%BC%95%E5%85%A5%20%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95/"/>
+      <url>2021/12/03/python%20import%20from%20sibling%20directory%E5%AD%90%E7%9B%AE%E5%BD%95%E5%BC%95%E5%85%A5%20%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python-import-from-sibling-directory子目录引入-另一个目录"><a href="#python-import-from-sibling-directory子目录引入-另一个目录" class="headerlink" title="python import from sibling directory子目录引入 另一个目录"></a>python import from sibling directory子目录引入 另一个目录</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="built_in">str</span>(Path(__file__).parent.parent))</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> utils.fxdict <span class="keyword">import</span> *</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python请求响应时间</title>
+      <link href="2021/12/03/python%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E6%97%B6%E9%97%B4/"/>
+      <url>2021/12/03/python%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E6%97%B6%E9%97%B4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="python请求响应时间"><a href="#python请求响应时间" class="headerlink" title="python请求响应时间"></a>python请求响应时间</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">r = requests.get(<span class="string">&quot;https://google.com&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(r.elapsed.total_seconds())</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -256,6 +386,19 @@
       <url>2021/12/03/pip%20remove%20all/</url>
       
         <content type="html"><![CDATA[<h1 id="pip-remove-all"><a href="#pip-remove-all" class="headerlink" title="pip remove all"></a>pip remove all</h1><p>pip freeze | xargs pip uninstall -y</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>中文转拼音</title>
+      <link href="2021/12/03/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/"/>
+      <url>2021/12/03/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="中文转拼音"><a href="#中文转拼音" class="headerlink" title="中文转拼音"></a>中文转拼音</h1><p>Python version &gt;&#x3D; 3.6</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install xpinyin</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>Python version &lt; 3.6</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install xpinyin==0.5.7</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xpinyin <span class="keyword">import</span> Pinyin</span><br><span class="line">p = Pinyin()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>)</span><br><span class="line"><span class="string">&#x27;shang-hai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># show tone marks</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, tone_marks=<span class="string">&#x27;marks&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shàng-hǎi&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, tone_marks=<span class="string">&#x27;numbers&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;shang4-hai3&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># remove splitter</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shanghai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># set splitter as whitespace</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shang hai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initial(<span class="string">&quot;上&quot;</span>)</span><br><span class="line"><span class="string">&#x27;S&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>)</span><br><span class="line"><span class="string">&#x27;S-H&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;SH&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="string">&#x27;S H&#x27;</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
       
