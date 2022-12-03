@@ -17,19 +17,6 @@
     
     
     <entry>
-      <title>Python list 排列组合</title>
-      <link href="2021/12/03/Python%20list%20%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/"/>
-      <url>2021/12/03/Python%20list%20%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Python-list-排列组合"><a href="#Python-list-排列组合" class="headerlink" title="Python list 排列组合"></a>Python list 排列组合</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 多个lists组合</span><br><span class="line">import itertools</span><br><span class="line">a = [[1,2,3],[4,5,6],[7,8,9,10]]</span><br><span class="line">list(itertools.product(*a))</span><br><span class="line">[(1, 4, 7), (1, 4, 8), (1, 4, 9), (1, 4, 10), (1, 5, 7), (1, 5, 8), (1, 5, 9), (1, 5, 10), (1, 6, 7), (1, 6, 8), (1, 6, 9), (1, 6, 10), (2, 4, 7), (2, 4, 8), (2, 4, 9), (2, 4, 10), (2, 5, 7), (2, 5, 8), (2, 5, 9), (2, 5, 10), (2, 6, 7), (2, 6, 8), (2, 6, 9), (2, 6, 10), (3, 4, 7), (3, 4, 8), (3, 4, 9), (3, 4, 10), (3, 5, 7), (3, 5, 8), (3, 5, 9), (3, 5, 10), (3, 6, 7), (3, 6, 8), (3, 6, 9), (3, 6, 10)]</span><br><span class="line"></span><br><span class="line"># 单个list所有排列</span><br><span class="line">from itertools import permutations</span><br><span class="line">permutations(L)</span><br><span class="line"></span><br><span class="line"># 单个list所有组合</span><br><span class="line">from itertools import combinations</span><br><span class="line"></span><br><span class="line">for i in combinations(Locations,4):</span><br><span class="line">print(i)</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>json处理</title>
       <link href="2021/12/03/json%E5%A4%84%E7%90%86/"/>
       <url>2021/12/03/json%E5%A4%84%E7%90%86/</url>
@@ -43,50 +30,11 @@
     
     
     <entry>
-      <title>json.dumps中文乱码</title>
-      <link href="2021/12/03/json.dumps%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
-      <url>2021/12/03/json.dumps%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</url>
+      <title>Python list 排列组合</title>
+      <link href="2021/12/03/Python%20list%20%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/"/>
+      <url>2021/12/03/Python%20list%20%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/</url>
       
-        <content type="html"><![CDATA[<h1 id="json-dumps中文乱码"><a href="#json-dumps中文乱码" class="headerlink" title="json.dumps中文乱码"></a>json.dumps中文乱码</h1><p>json.dumps(o, ensure_ascii&#x3D;False)</p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Python获取当前时间</title>
-      <link href="2021/12/03/Python%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4/"/>
-      <url>2021/12/03/Python%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E6%97%B6%E9%97%B4/</url>
-      
-        <content type="html"><![CDATA[<h1 id="Python获取当前时间"><a href="#Python获取当前时间" class="headerlink" title="Python获取当前时间"></a>Python获取当前时间</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">from datetime import datetime</span><br><span class="line">now = datetime.now().strftime(&quot;%Y/%m/%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from datetime import datetime</span><br><span class="line">now = datetime.now().strftime(&quot;%Y/%m/%d %H:%M:%S:%f&quot;)</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>key-value dict 转dataframe  pandas</title>
-      <link href="2021/12/03/key-value%20dict%20%E8%BD%ACdataframe%20%20pandas/"/>
-      <url>2021/12/03/key-value%20dict%20%E8%BD%ACdataframe%20%20pandas/</url>
-      
-        <content type="html"><![CDATA[<h1 id="key-value-dict-转dataframe-pandas"><a href="#key-value-dict-转dataframe-pandas" class="headerlink" title="key-value dict 转dataframe  pandas"></a>key-value dict 转dataframe  pandas</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">!!python3要转为list</span><br><span class="line">pd.DataFrame(d.items())  # or list(d.items()) in python 3</span><br><span class="line">pd.DataFrame(d.items(), columns=[&#x27;Date&#x27;, &#x27;DateValue&#x27;])</span><br><span class="line"></span><br><span class="line">pd.DataFrame(list(D.items()), columns=[&#x27;Date&#x27;, &#x27;DateValue&#x27;])</span><br></pre></td></tr></table></figure><p>如果是table，用这个格式</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D = &#123;&#x27;row1&#x27;: &#123;&#x27;col1&#x27;: 1, &#x27;col2&#x27;: 0.5&#125;, &#x27;row2&#x27;: &#123;&#x27;col1&#x27;: 2, &#x27;col2&#x27;: 0.75&#125;&#125;</span><br><span class="line">#orient可选index：row1，row2作为行</span><br><span class="line">#orient可选columns，row1，row2作为列</span><br><span class="line">df = pd.DataFrame.from_dict(D,orient=&#x27;index&#x27;) </span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>melt反操作 pivot</title>
-      <link href="2021/12/03/melt%E5%8F%8D%E6%93%8D%E4%BD%9C%20pivot/"/>
-      <url>2021/12/03/melt%E5%8F%8D%E6%93%8D%E4%BD%9C%20pivot/</url>
-      
-        <content type="html"><![CDATA[<h1 id="melt反操作-pivot"><a href="#melt反操作-pivot" class="headerlink" title="melt反操作 pivot"></a>melt反操作 pivot</h1><p>origin.pivot(index&#x3D;’最左边的名字’, columns&#x3D;[列名])[‘取哪些值’]</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Python-list-排列组合"><a href="#Python-list-排列组合" class="headerlink" title="Python list 排列组合"></a>Python list 排列组合</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"># 多个lists组合</span><br><span class="line">import itertools</span><br><span class="line">a = [[1,2,3],[4,5,6],[7,8,9,10]]</span><br><span class="line">list(itertools.product(*a))</span><br><span class="line">[(1, 4, 7), (1, 4, 8), (1, 4, 9), (1, 4, 10), (1, 5, 7), (1, 5, 8), (1, 5, 9), (1, 5, 10), (1, 6, 7), (1, 6, 8), (1, 6, 9), (1, 6, 10), (2, 4, 7), (2, 4, 8), (2, 4, 9), (2, 4, 10), (2, 5, 7), (2, 5, 8), (2, 5, 9), (2, 5, 10), (2, 6, 7), (2, 6, 8), (2, 6, 9), (2, 6, 10), (3, 4, 7), (3, 4, 8), (3, 4, 9), (3, 4, 10), (3, 5, 7), (3, 5, 8), (3, 5, 9), (3, 5, 10), (3, 6, 7), (3, 6, 8), (3, 6, 9), (3, 6, 10)]</span><br><span class="line"></span><br><span class="line"># 单个list所有排列</span><br><span class="line">from itertools import permutations</span><br><span class="line">permutations(L)</span><br><span class="line"></span><br><span class="line"># 单个list所有组合</span><br><span class="line">from itertools import combinations</span><br><span class="line"></span><br><span class="line">for i in combinations(Locations,4):</span><br><span class="line">print(i)</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -108,24 +56,11 @@
     
     
     <entry>
-      <title>pandas index 转column</title>
-      <link href="2021/12/03/pandas%20index%20%E8%BD%ACcolumn/"/>
-      <url>2021/12/03/pandas%20index%20%E8%BD%ACcolumn/</url>
+      <title>melt反操作 pivot</title>
+      <link href="2021/12/03/melt%E5%8F%8D%E6%93%8D%E4%BD%9C%20pivot/"/>
+      <url>2021/12/03/melt%E5%8F%8D%E6%93%8D%E4%BD%9C%20pivot/</url>
       
-        <content type="html"><![CDATA[<h1 id="pandas-index-转column"><a href="#pandas-index-转column" class="headerlink" title="pandas index 转column"></a>pandas index 转column</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># index改名</span><br><span class="line">data.index.name = &#x27;foo&#x27;</span><br><span class="line">data = data.reset_index()</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>pandas 删除某列</title>
-      <link href="2021/12/03/pandas%20%E5%88%A0%E9%99%A4%E6%9F%90%E5%88%97/"/>
-      <url>2021/12/03/pandas%20%E5%88%A0%E9%99%A4%E6%9F%90%E5%88%97/</url>
-      
-        <content type="html"><![CDATA[<h1 id="pandas-删除某列"><a href="#pandas-删除某列" class="headerlink" title="pandas 删除某列"></a>pandas 删除某列</h1><p>df.drop(columns&#x3D;[‘B’, ‘C’])</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="melt反操作-pivot"><a href="#melt反操作-pivot" class="headerlink" title="melt反操作 pivot"></a>melt反操作 pivot</h1><p>origin.pivot(index&#x3D;’最左边的名字’, columns&#x3D;[列名])[‘取哪些值’]</p>]]></content>
       
       
       
@@ -173,11 +108,11 @@
     
     
     <entry>
-      <title>pandas转字典 最快</title>
-      <link href="2021/12/03/pandas%E8%BD%AC%E5%AD%97%E5%85%B8%20%E6%9C%80%E5%BF%AB/"/>
-      <url>2021/12/03/pandas%E8%BD%AC%E5%AD%97%E5%85%B8%20%E6%9C%80%E5%BF%AB/</url>
+      <title>pandas 删除某列</title>
+      <link href="2021/12/03/pandas%20%E5%88%A0%E9%99%A4%E6%9F%90%E5%88%97/"/>
+      <url>2021/12/03/pandas%20%E5%88%A0%E9%99%A4%E6%9F%90%E5%88%97/</url>
       
-        <content type="html"><![CDATA[<h1 id="pandas转字典-最快"><a href="#pandas转字典-最快" class="headerlink" title="pandas转字典 最快"></a>pandas转字典 最快</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">groupby = defaultdict(list)</span><br><span class="line">L = df.to_dict(&#x27;records&#x27;, into=dd)</span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#整体转</span><br><span class="line">D = df.set_index(&#x27;项目名称&#x27;).T.to_dict()</span><br><span class="line">D = df.set_index(&#x27;项目名称&#x27;).T.to_dict(list)</span><br><span class="line"></span><br><span class="line">D = dict(zip(data[&#x27;Date&#x27;],data[&#x27;Low&#x27;]))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">其次</span><br><span class="line">D = pd.Series(data[&#x27;Low&#x27;].values,index=data[&#x27;Date&#x27;]).to_dict()</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="pandas-删除某列"><a href="#pandas-删除某列" class="headerlink" title="pandas 删除某列"></a>pandas 删除某列</h1><p>df.drop(columns&#x3D;[‘B’, ‘C’])</p>]]></content>
       
       
       
@@ -199,11 +134,50 @@
     
     
     <entry>
-      <title>pip换源</title>
-      <link href="2021/12/03/pip%E6%8D%A2%E6%BA%90/"/>
-      <url>2021/12/03/pip%E6%8D%A2%E6%BA%90/</url>
+      <title>pandas转字典 最快</title>
+      <link href="2021/12/03/pandas%E8%BD%AC%E5%AD%97%E5%85%B8%20%E6%9C%80%E5%BF%AB/"/>
+      <url>2021/12/03/pandas%E8%BD%AC%E5%AD%97%E5%85%B8%20%E6%9C%80%E5%BF%AB/</url>
       
-        <content type="html"><![CDATA[<h1 id="pip换源"><a href="#pip换源" class="headerlink" title="pip换源"></a>pip换源</h1><p>腾讯云源</p><p>升级 pip 到最新的版本 (&gt;&#x3D;10.0.0) 后进行配置：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pip -U</span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://mirrors.cloud.tencent.com/pypi/simple</span><br></pre></td></tr></table></figure><p>也可以临时使用本镜像来升级 pip：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://mirrors.cloud.tencent.com/pypi/simple --upgrade pip</span><br><span class="line"></span><br></pre></td></tr></table></figure><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">在系统根目录下</span><br><span class="line">查找隐藏文件.pip</span><br><span class="line">没有的话新建mkdir .pip</span><br><span class="line">在里面 touch pip.conf</span><br><span class="line"></span><br><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host=pypi.tuna.tsinghua.edu.cn</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">指定源</span><br><span class="line">pip install pythonModuleName -i https://pypi.douban.com/simple</span><br><span class="line">pip install paddlepaddle-tiny==1.6.1 -i https://pypi.python.org/simple</span><br><span class="line">pip install ortools -i https://pypi.python.org/simple</span><br><span class="line">pip install dataset -i https://pypi.python.org/simple</span><br><span class="line">pip install blind-watermark -i https://pypi.douban.com/simple</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="pandas转字典-最快"><a href="#pandas转字典-最快" class="headerlink" title="pandas转字典 最快"></a>pandas转字典 最快</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">groupby = defaultdict(list)</span><br><span class="line">L = df.to_dict(&#x27;records&#x27;, into=dd)</span><br><span class="line">print(L)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#整体转</span><br><span class="line">D = df.set_index(&#x27;项目名称&#x27;).T.to_dict()</span><br><span class="line">D = df.set_index(&#x27;项目名称&#x27;).T.to_dict(list)</span><br><span class="line"></span><br><span class="line">D = dict(zip(data[&#x27;Date&#x27;],data[&#x27;Low&#x27;]))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">其次</span><br><span class="line">D = pd.Series(data[&#x27;Low&#x27;].values,index=data[&#x27;Date&#x27;]).to_dict()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>json.dumps中文乱码</title>
+      <link href="2021/12/03/json.dumps%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/"/>
+      <url>2021/12/03/json.dumps%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<h1 id="json-dumps中文乱码"><a href="#json-dumps中文乱码" class="headerlink" title="json.dumps中文乱码"></a>json.dumps中文乱码</h1><p>json.dumps(o, ensure_ascii&#x3D;False)</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>key-value dict 转dataframe  pandas</title>
+      <link href="2021/12/03/key-value%20dict%20%E8%BD%ACdataframe%20%20pandas/"/>
+      <url>2021/12/03/key-value%20dict%20%E8%BD%ACdataframe%20%20pandas/</url>
+      
+        <content type="html"><![CDATA[<h1 id="key-value-dict-转dataframe-pandas"><a href="#key-value-dict-转dataframe-pandas" class="headerlink" title="key-value dict 转dataframe  pandas"></a>key-value dict 转dataframe  pandas</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">!!python3要转为list</span><br><span class="line">pd.DataFrame(d.items())  # or list(d.items()) in python 3</span><br><span class="line">pd.DataFrame(d.items(), columns=[&#x27;Date&#x27;, &#x27;DateValue&#x27;])</span><br><span class="line"></span><br><span class="line">pd.DataFrame(list(D.items()), columns=[&#x27;Date&#x27;, &#x27;DateValue&#x27;])</span><br></pre></td></tr></table></figure><p>如果是table，用这个格式</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D = &#123;&#x27;row1&#x27;: &#123;&#x27;col1&#x27;: 1, &#x27;col2&#x27;: 0.5&#125;, &#x27;row2&#x27;: &#123;&#x27;col1&#x27;: 2, &#x27;col2&#x27;: 0.75&#125;&#125;</span><br><span class="line">#orient可选index：row1，row2作为行</span><br><span class="line">#orient可选columns，row1，row2作为列</span><br><span class="line">df = pd.DataFrame.from_dict(D,orient=&#x27;index&#x27;) </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>pip remove all</title>
+      <link href="2021/12/03/pip%20remove%20all/"/>
+      <url>2021/12/03/pip%20remove%20all/</url>
+      
+        <content type="html"><![CDATA[<h1 id="pip-remove-all"><a href="#pip-remove-all" class="headerlink" title="pip remove all"></a>pip remove all</h1><p>pip freeze | xargs pip uninstall -y</p>]]></content>
       
       
       
@@ -238,11 +212,11 @@
     
     
     <entry>
-      <title>python pandas 删除全空行列-1</title>
-      <link href="2021/12/03/python%20pandas%20%E5%88%A0%E9%99%A4%E5%85%A8%E7%A9%BA%E8%A1%8C%E5%88%97-1/"/>
-      <url>2021/12/03/python%20pandas%20%E5%88%A0%E9%99%A4%E5%85%A8%E7%A9%BA%E8%A1%8C%E5%88%97-1/</url>
+      <title>pip换源</title>
+      <link href="2021/12/03/pip%E6%8D%A2%E6%BA%90/"/>
+      <url>2021/12/03/pip%E6%8D%A2%E6%BA%90/</url>
       
-        <content type="html"><![CDATA[<h1 id="python-pandas-删除全空行列"><a href="#python-pandas-删除全空行列" class="headerlink" title="python pandas 删除全空行列"></a>python pandas 删除全空行列</h1><p>删除表中全部为NaN的行<br>df.dropna(axis&#x3D;0,how&#x3D;’all’)  </p><p>删除表中全部为NaN的列<br>df.dropna(axis&#x3D;1,how&#x3D;’all’) </p>]]></content>
+        <content type="html"><![CDATA[<h1 id="pip换源"><a href="#pip换源" class="headerlink" title="pip换源"></a>pip换源</h1><p>腾讯云源</p><p>升级 pip 到最新的版本 (&gt;&#x3D;10.0.0) 后进行配置：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pip -U</span><br><span class="line">pip config <span class="built_in">set</span> global.index-url https://mirrors.cloud.tencent.com/pypi/simple</span><br></pre></td></tr></table></figure><p>也可以临时使用本镜像来升级 pip：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install -i https://mirrors.cloud.tencent.com/pypi/simple --upgrade pip</span><br><span class="line"></span><br></pre></td></tr></table></figure><hr><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">在系统根目录下</span><br><span class="line">查找隐藏文件.pip</span><br><span class="line">没有的话新建mkdir .pip</span><br><span class="line">在里面 touch pip.conf</span><br><span class="line"></span><br><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">trusted-host=pypi.tuna.tsinghua.edu.cn</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">指定源</span><br><span class="line">pip install pythonModuleName -i https://pypi.douban.com/simple</span><br><span class="line">pip install paddlepaddle-tiny==1.6.1 -i https://pypi.python.org/simple</span><br><span class="line">pip install ortools -i https://pypi.python.org/simple</span><br><span class="line">pip install dataset -i https://pypi.python.org/simple</span><br><span class="line">pip install blind-watermark -i https://pypi.douban.com/simple</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -264,11 +238,11 @@
     
     
     <entry>
-      <title>python timedelta 一个月后</title>
-      <link href="2021/12/03/python%20timedelta%20%E4%B8%80%E4%B8%AA%E6%9C%88%E5%90%8E/"/>
-      <url>2021/12/03/python%20timedelta%20%E4%B8%80%E4%B8%AA%E6%9C%88%E5%90%8E/</url>
+      <title>python string 转url</title>
+      <link href="2021/12/03/python%20string%20%E8%BD%ACurl/"/>
+      <url>2021/12/03/python%20string%20%E8%BD%ACurl/</url>
       
-        <content type="html"><![CDATA[<h1 id="python-timedelta-一个月后"><a href="#python-timedelta-一个月后" class="headerlink" title="python timedelta 一个月后"></a>python timedelta 一个月后</h1><p>pip install python-dateutil</p><p><a href="https://dateutil.readthedocs.io/en/stable/examples.html">https://dateutil.readthedocs.io/en/stable/examples.html</a></p><p>datetime.datetime(2022, 4, 20) + dateutil.relativedelta.relativedelta(months&#x3D;_)</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="python-string-转url"><a href="#python-string-转url" class="headerlink" title="python string 转url"></a>python string 转url</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import urllib.parse</span><br><span class="line">safe_string = urllib.parse.quote(&#x27;snow peak&#x27;)</span><br><span class="line">print(safe_string)</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -277,11 +251,11 @@
     
     
     <entry>
-      <title>python string 转url</title>
-      <link href="2021/12/03/python%20string%20%E8%BD%ACurl/"/>
-      <url>2021/12/03/python%20string%20%E8%BD%ACurl/</url>
+      <title>python timedelta 一个月后</title>
+      <link href="2021/12/03/python%20timedelta%20%E4%B8%80%E4%B8%AA%E6%9C%88%E5%90%8E/"/>
+      <url>2021/12/03/python%20timedelta%20%E4%B8%80%E4%B8%AA%E6%9C%88%E5%90%8E/</url>
       
-        <content type="html"><![CDATA[<h1 id="python-string-转url"><a href="#python-string-转url" class="headerlink" title="python string 转url"></a>python string 转url</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import urllib.parse</span><br><span class="line">safe_string = urllib.parse.quote(&#x27;snow peak&#x27;)</span><br><span class="line">print(safe_string)</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="python-timedelta-一个月后"><a href="#python-timedelta-一个月后" class="headerlink" title="python timedelta 一个月后"></a>python timedelta 一个月后</h1><p>pip install python-dateutil</p><p><a href="https://dateutil.readthedocs.io/en/stable/examples.html">https://dateutil.readthedocs.io/en/stable/examples.html</a></p><p>datetime.datetime(2022, 4, 20) + dateutil.relativedelta.relativedelta(months&#x3D;_)</p>]]></content>
       
       
       
@@ -303,11 +277,11 @@
     
     
     <entry>
-      <title>python 快速启动服务器 文件分享</title>
-      <link href="2021/12/03/python%20%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%20%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/"/>
-      <url>2021/12/03/python%20%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%20%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
+      <title>python去掉换行制表\n\r\t</title>
+      <link href="2021/12/03/python%E5%8E%BB%E6%8E%89%E6%8D%A2%E8%A1%8C%E5%88%B6%E8%A1%A8%5Cn%5Cr%5Ct/"/>
+      <url>2021/12/03/python%E5%8E%BB%E6%8E%89%E6%8D%A2%E8%A1%8C%E5%88%B6%E8%A1%A8%5Cn%5Cr%5Ct/</url>
       
-        <content type="html"><![CDATA[<h1 id="python-快速启动服务器-文件分享"><a href="#python-快速启动服务器-文件分享" class="headerlink" title="python 快速启动服务器 文件分享"></a>python 快速启动服务器 文件分享</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd 到目录</span><br><span class="line">python -m http.server 8080</span><br><span class="line">python -m http.server 8000 --bind 127.0.0.1</span><br><span class="line"></span><br><span class="line">python -m http.server 2333</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="python去掉换行制表-n-r-t"><a href="#python去掉换行制表-n-r-t" class="headerlink" title="python去掉换行制表\n\r\t"></a>python去掉换行制表\n\r\t</h1><p>用split()就可以</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>text = <span class="string">&#x27;   foo\tbar\r\nFred  Nurke\t Joe Smith\n\n&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27; &#x27;</span>.join(text.split())</span><br><span class="line"><span class="string">&#x27;foo bar Fred Nurke Joe Smith&#x27;</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -316,11 +290,11 @@
     
     
     <entry>
-      <title>python去掉换行制表\n\r\t</title>
-      <link href="2021/12/03/python%E5%8E%BB%E6%8E%89%E6%8D%A2%E8%A1%8C%E5%88%B6%E8%A1%A8%5Cn%5Cr%5Ct/"/>
-      <url>2021/12/03/python%E5%8E%BB%E6%8E%89%E6%8D%A2%E8%A1%8C%E5%88%B6%E8%A1%A8%5Cn%5Cr%5Ct/</url>
+      <title>python 快速启动服务器 文件分享</title>
+      <link href="2021/12/03/python%20%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%20%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/"/>
+      <url>2021/12/03/python%20%E5%BF%AB%E9%80%9F%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%20%E6%96%87%E4%BB%B6%E5%88%86%E4%BA%AB/</url>
       
-        <content type="html"><![CDATA[<h1 id="python去掉换行制表-n-r-t"><a href="#python去掉换行制表-n-r-t" class="headerlink" title="python去掉换行制表\n\r\t"></a>python去掉换行制表\n\r\t</h1><p>用split()就可以</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>text = <span class="string">&#x27;   foo\tbar\r\nFred  Nurke\t Joe Smith\n\n&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27; &#x27;</span>.join(text.split())</span><br><span class="line"><span class="string">&#x27;foo bar Fred Nurke Joe Smith&#x27;</span></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="python-快速启动服务器-文件分享"><a href="#python-快速启动服务器-文件分享" class="headerlink" title="python 快速启动服务器 文件分享"></a>python 快速启动服务器 文件分享</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd 到目录</span><br><span class="line">python -m http.server 8080</span><br><span class="line">python -m http.server 8000 --bind 127.0.0.1</span><br><span class="line"></span><br><span class="line">python -m http.server 2333</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -342,11 +316,11 @@
     
     
     <entry>
-      <title>python import from sibling directory子目录引入 另一个目录</title>
-      <link href="2021/12/03/python%20import%20from%20sibling%20directory%E5%AD%90%E7%9B%AE%E5%BD%95%E5%BC%95%E5%85%A5%20%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95/"/>
-      <url>2021/12/03/python%20import%20from%20sibling%20directory%E5%AD%90%E7%9B%AE%E5%BD%95%E5%BC%95%E5%85%A5%20%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95/</url>
+      <title>python请求响应时间</title>
+      <link href="2021/12/03/python%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E6%97%B6%E9%97%B4/"/>
+      <url>2021/12/03/python%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E6%97%B6%E9%97%B4/</url>
       
-        <content type="html"><![CDATA[<h1 id="python-import-from-sibling-directory子目录引入-另一个目录"><a href="#python-import-from-sibling-directory子目录引入-另一个目录" class="headerlink" title="python import from sibling directory子目录引入 另一个目录"></a>python import from sibling directory子目录引入 另一个目录</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="built_in">str</span>(Path(__file__).parent.parent))</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> utils.fxdict <span class="keyword">import</span> *</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="python请求响应时间"><a href="#python请求响应时间" class="headerlink" title="python请求响应时间"></a>python请求响应时间</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">r = requests.get(<span class="string">&quot;https://google.com&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(r.elapsed.total_seconds())</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -355,11 +329,11 @@
     
     
     <entry>
-      <title>python请求响应时间</title>
-      <link href="2021/12/03/python%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E6%97%B6%E9%97%B4/"/>
-      <url>2021/12/03/python%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E6%97%B6%E9%97%B4/</url>
+      <title>中文转拼音</title>
+      <link href="2021/12/03/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/"/>
+      <url>2021/12/03/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/</url>
       
-        <content type="html"><![CDATA[<h1 id="python请求响应时间"><a href="#python请求响应时间" class="headerlink" title="python请求响应时间"></a>python请求响应时间</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">r = requests.get(<span class="string">&quot;https://google.com&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(r.elapsed.total_seconds())</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="中文转拼音"><a href="#中文转拼音" class="headerlink" title="中文转拼音"></a>中文转拼音</h1><p>Python version &gt;&#x3D; 3.6</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install xpinyin</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>Python version &lt; 3.6</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install xpinyin==0.5.7</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xpinyin <span class="keyword">import</span> Pinyin</span><br><span class="line">p = Pinyin()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>)</span><br><span class="line"><span class="string">&#x27;shang-hai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># show tone marks</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, tone_marks=<span class="string">&#x27;marks&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shàng-hǎi&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, tone_marks=<span class="string">&#x27;numbers&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;shang4-hai3&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># remove splitter</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shanghai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># set splitter as whitespace</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shang hai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initial(<span class="string">&quot;上&quot;</span>)</span><br><span class="line"><span class="string">&#x27;S&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>)</span><br><span class="line"><span class="string">&#x27;S-H&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;SH&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="string">&#x27;S H&#x27;</span></span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -381,11 +355,11 @@
     
     
     <entry>
-      <title>pip remove all</title>
-      <link href="2021/12/03/pip%20remove%20all/"/>
-      <url>2021/12/03/pip%20remove%20all/</url>
+      <title>pandas index 转column</title>
+      <link href="2021/12/03/pandas%20index%20%E8%BD%ACcolumn/"/>
+      <url>2021/12/03/pandas%20index%20%E8%BD%ACcolumn/</url>
       
-        <content type="html"><![CDATA[<h1 id="pip-remove-all"><a href="#pip-remove-all" class="headerlink" title="pip remove all"></a>pip remove all</h1><p>pip freeze | xargs pip uninstall -y</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="pandas-index-转column"><a href="#pandas-index-转column" class="headerlink" title="pandas index 转column"></a>pandas index 转column</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># index改名</span><br><span class="line">data.index.name = &#x27;foo&#x27;</span><br><span class="line">data = data.reset_index()</span><br></pre></td></tr></table></figure>]]></content>
       
       
       
@@ -394,11 +368,11 @@
     
     
     <entry>
-      <title>中文转拼音</title>
-      <link href="2021/12/03/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/"/>
-      <url>2021/12/03/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/</url>
+      <title>python import from sibling directory子目录引入 另一个目录</title>
+      <link href="2021/12/03/python%20import%20from%20sibling%20directory%E5%AD%90%E7%9B%AE%E5%BD%95%E5%BC%95%E5%85%A5%20%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95/"/>
+      <url>2021/12/03/python%20import%20from%20sibling%20directory%E5%AD%90%E7%9B%AE%E5%BD%95%E5%BC%95%E5%85%A5%20%E5%8F%A6%E4%B8%80%E4%B8%AA%E7%9B%AE%E5%BD%95/</url>
       
-        <content type="html"><![CDATA[<h1 id="中文转拼音"><a href="#中文转拼音" class="headerlink" title="中文转拼音"></a>中文转拼音</h1><p>Python version &gt;&#x3D; 3.6</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install xpinyin</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>Python version &lt; 3.6</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install xpinyin==0.5.7</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xpinyin <span class="keyword">import</span> Pinyin</span><br><span class="line">p = Pinyin()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>)</span><br><span class="line"><span class="string">&#x27;shang-hai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># show tone marks</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, tone_marks=<span class="string">&#x27;marks&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shàng-hǎi&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, tone_marks=<span class="string">&#x27;numbers&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;shang4-hai3&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># remove splitter</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shanghai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># set splitter as whitespace</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shang hai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initial(<span class="string">&quot;上&quot;</span>)</span><br><span class="line"><span class="string">&#x27;S&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>)</span><br><span class="line"><span class="string">&#x27;S-H&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;SH&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="string">&#x27;S H&#x27;</span></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1 id="python-import-from-sibling-directory子目录引入-另一个目录"><a href="#python-import-from-sibling-directory子目录引入-另一个目录" class="headerlink" title="python import from sibling directory子目录引入 另一个目录"></a>python import from sibling directory子目录引入 另一个目录</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.append(<span class="built_in">str</span>(Path(__file__).parent.parent))</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> utils.fxdict <span class="keyword">import</span> *</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       
