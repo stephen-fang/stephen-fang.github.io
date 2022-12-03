@@ -2,6 +2,84 @@
 <search> 
   
   
+    
+    <entry>
+      <title>生成器使用lambda</title>
+      <link href="2021/12/03/%E7%94%9F%E6%88%90%E5%99%A8%E4%BD%BF%E7%94%A8lambda/"/>
+      <url>2021/12/03/%E7%94%9F%E6%88%90%E5%99%A8%E4%BD%BF%E7%94%A8lambda/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lambda x: True if x % 2 == 0 else False</span><br><span class="line">注意def是语句而lambda是表达式</span><br><span class="line">下面这种情况下就只能用lambda而不能用def</span><br><span class="line">[(lambda x:x*x)(x) for x in range(1,11)]</span><br><span class="line"></span><br><span class="line">record = [(lambda x:(x[0], x[1]) if x[0] != x[1] else (x[0]))(e) for e in record]</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python pandas 反转columns reverse</title>
+      <link href="2021/12/03/python-pandas-%E5%8F%8D%E8%BD%ACcolumns-reverse/"/>
+      <url>2021/12/03/python-pandas-%E5%8F%8D%E8%BD%ACcolumns-reverse/</url>
+      
+        <content type="html"><![CDATA[<p>index不变</p><p>法1</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 不包含index</span><br><span class="line">football = football[football.columns[::-1]]</span><br></pre></td></tr></table></figure><p>法2</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">football = football.iloc[:, ::-1]</span><br><span class="line"></span><br><span class="line">The first : means &quot;take all rows&quot;, the ::-1 means step backwards through the columns.</span><br><span class="line">The loc indexer mentioned in @PietroBattiston&#x27;s answer works in the same way.</span><br></pre></td></tr></table></figure><p>法3</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">football = football[reversed(football.columns)]</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python defaultdict json convert</title>
+      <link href="2021/12/03/python-defaultdict-json-convert/"/>
+      <url>2021/12/03/python-defaultdict-json-convert/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># - dict to json</span><br><span class="line"># 直接读取</span><br><span class="line">import simplejson as json </span><br><span class="line">myfruits = &#123;&#x27;fruit&#x27;:4, &#x27;color&#x27;:11&#125;</span><br><span class="line">json.dumps(myfruits)</span><br><span class="line"></span><br><span class="line"># 写入文件</span><br><span class="line">data = &#123;&quot;name&quot;: &quot;Jane&quot;, &quot;age&quot;: 17&#125;</span><br><span class="line">with open(&#x27;friends.json&#x27;, &#x27;w&#x27;) as f:</span><br><span class="line">    json.dump(data, f)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># - json to dict</span><br><span class="line"># 从文件读取</span><br><span class="line">with open(&#x27;config.json&#x27;) as f:</span><br><span class="line">    config = json.load(f)</span><br><span class="line"># or pathlib version</span><br><span class="line">J = json.load(json_filename.open())</span><br><span class="line">    </span><br><span class="line"># 直接解析</span><br><span class="line">json_data = &#x27;&#123;&quot;name&quot;: &quot;Jane&quot;, &quot;age&quot;: 17&#125;&#x27;</span><br><span class="line">data = json.loads(json_data)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python判断操作系统类型</title>
+      <link href="2021/12/03/python%E5%88%A4%E6%96%AD%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%B1%BB%E5%9E%8B/"/>
+      <url>2021/12/03/python%E5%88%A4%E6%96%AD%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%B1%BB%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sys <span class="keyword">import</span> platform</span><br><span class="line"><span class="keyword">if</span> platform == <span class="string">&quot;linux&quot;</span> <span class="keyword">or</span> platform == <span class="string">&quot;linux2&quot;</span>:</span><br><span class="line">    <span class="comment"># linux</span></span><br><span class="line"><span class="keyword">elif</span> platform == <span class="string">&quot;darwin&quot;</span>:</span><br><span class="line">    <span class="comment"># OS X</span></span><br><span class="line"><span class="keyword">elif</span> platform == <span class="string">&quot;win32&quot;</span>:</span><br><span class="line">    <span class="comment"># Windows...</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>python去掉换行制表nrt</title>
+      <link href="2021/12/03/python%E5%8E%BB%E6%8E%89%E6%8D%A2%E8%A1%8C%E5%88%B6%E8%A1%A8nrt/"/>
+      <url>2021/12/03/python%E5%8E%BB%E6%8E%89%E6%8D%A2%E8%A1%8C%E5%88%B6%E8%A1%A8nrt/</url>
+      
+        <content type="html"><![CDATA[<p>用split()就可以</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>text = <span class="string">&#x27;   foo\tbar\r\nFred  Nurke\t Joe Smith\n\n&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27; &#x27;</span>.join(text.split())</span><br><span class="line"><span class="string">&#x27;foo bar Fred Nurke Joe Smith&#x27;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>中文转拼音</title>
+      <link href="2021/12/03/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/"/>
+      <url>2021/12/03/%E4%B8%AD%E6%96%87%E8%BD%AC%E6%8B%BC%E9%9F%B3/</url>
+      
+        <content type="html"><![CDATA[<p>Python version &gt;&#x3D; 3.6</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install xpinyin</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>Python version &lt; 3.6</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install xpinyin==0.5.7</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xpinyin <span class="keyword">import</span> Pinyin</span><br><span class="line">p = Pinyin()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>)</span><br><span class="line"><span class="string">&#x27;shang-hai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># show tone marks</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, tone_marks=<span class="string">&#x27;marks&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shàng-hǎi&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, tone_marks=<span class="string">&#x27;numbers&#x27;</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">&#x27;shang4-hai3&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># remove splitter</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shanghai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="comment"># set splitter as whitespace</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_pinyin(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="string">&#x27;shang hai&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initial(<span class="string">&quot;上&quot;</span>)</span><br><span class="line"><span class="string">&#x27;S&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>)</span><br><span class="line"><span class="string">&#x27;S-H&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"><span class="string">&#x27;SH&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>p.get_initials(<span class="string">&quot;上海&quot;</span>, <span class="string">&#x27; &#x27;</span>)</span><br><span class="line"><span class="string">&#x27;S H&#x27;</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
   
   
 </search>
