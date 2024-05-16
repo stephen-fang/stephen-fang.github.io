@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://huatao.art/bugs/index.html</loc>
+    
+    <lastmod>2024-05-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://huatao.art/2023/11/13/10/</loc>
     
     <lastmod>2024-05-16</lastmod>
@@ -155,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://huatao.art/2023/11/13/48/</loc>
+    <loc>https://huatao.art/2023/11/13/6/</loc>
     
     <lastmod>2024-05-16</lastmod>
     
@@ -164,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://huatao.art/2023/11/13/6/</loc>
+    <loc>https://huatao.art/2023/11/13/48/</loc>
     
     <lastmod>2024-05-16</lastmod>
     
@@ -344,7 +353,7 @@
   </url>
   
   <url>
-    <loc>https://huatao.art/2023/11/13/27/</loc>
+    <loc>https://huatao.art/2023/11/13/26/</loc>
     
     <lastmod>2024-05-16</lastmod>
     
@@ -353,7 +362,7 @@
   </url>
   
   <url>
-    <loc>https://huatao.art/2023/11/13/26/</loc>
+    <loc>https://huatao.art/2023/11/13/27/</loc>
     
     <lastmod>2024-05-16</lastmod>
     
@@ -464,15 +473,6 @@
     <loc>https://huatao.art/about/index.html</loc>
     
     <lastmod>2024-05-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://huatao.art/whatsnew/index.html</loc>
-    
-    <lastmod>2024-01-02</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
