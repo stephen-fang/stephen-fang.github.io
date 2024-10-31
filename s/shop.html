@@ -99,7 +99,7 @@
           </li>
         
           <li class="nav-item">
-            <a class="nav-link" target="_blank" rel="noopener" href="https://m.dianping.com/shopshare/EodwYREVuBtvd3TN?msource=Appshare2021&utm_source=shop_share" >实体店铺/Shop</a>
+            <a class="nav-link" href="/s/shop.html" >实体店铺/Shop</a>
           </li>
         
           <li class="nav-item">
@@ -151,17 +151,18 @@
         document.getElementById('loading').style.display = 'none';
     
         // 根据"country_code"的值进行跳转
-        if (countryCode === 'CN') {
+        if (countryCode === 'CN' || 1===1) {
           // 如果是中国，检测操作系统
           var platform = navigator.platform.toLowerCase();
     
           // 检测是否是苹果系统
           if (platform.includes('iphone') || platform.includes('ipad') || platform.includes('mac')) {
             // 如果是苹果系统，跳转到指定的苹果地图链接
-            window.location.href = 'https://maps.apple.com/?address=%E4%B8%AD%E5%9B%BD%E4%B8%8A%E6%B5%B7%E5%B8%82%E6%B5%A6%E4%B8%9C%E6%96%B0%E5%8C%BA%E4%B8%9C%E9%99%86%E8%B7%AF1709-1%E5%8C%97%E9%83%A8&auid=1118714157263663&ll=31.265396,121.607619&lsp=57879&q=%E7%94%BB%E9%99%B6%E8%BD%A9%E7%B4%AB%E7%A0%82%E5%A3%B6&_ext=CjEKBAgEEAQKBAgFEAMKBAgGEBYKBAgbEAMKBAhSEAEKBAhVEBAKBAhZEAQKBQikARABEiQpnX92TKJBP0Axa+BNVyNmXkA53XqSrz9GP0BBZdZMHqNnXkA%3D';
+           //  window.location.href = 'https://maps.apple.com/?address=%E4%B8%AD%E5%9B%BD%E4%B8%8A%E6%B5%B7%E5%B8%82%E6%B5%A6%E4%B8%9C%E6%96%B0%E5%8C%BA%E4%B8%9C%E9%99%86%E8%B7%AF1709-1%E5%8C%97%E9%83%A8&auid=1118714157263663&ll=31.265396,121.607619&lsp=57879&q=%E7%94%BB%E9%99%B6%E8%BD%A9%E7%B4%AB%E7%A0%82%E5%A3%B6&_ext=CjEKBAgEEAQKBAgFEAMKBAgGEBYKBAgbEAMKBAhSEAEKBAhVEBAKBAhZEAQKBQikARABEiQpnX92TKJBP0Axa+BNVyNmXkA53XqSrz9GP0BBZdZMHqNnXkA%3D'; 
+            window.location.href = 'https://surl.amap.com/40TxskSwo6D0';
           } else {
             // 如果不是苹果系统，回到首页
-            window.location.href = 'https://huapot.com'; // 替换为你的首页地址
+            window.location.href = 'https://surl.amap.com/40TxskSwo6D0'; // 替换为你的首页地址
           }
         } else {
           // 否则，跳转到指定的网址
@@ -173,6 +174,12 @@
         // 如果发生错误，也跳转到指定的网址
         window.location.href = 'https://teaoverflow.com';
       });
+
+
+      // 替换页面中的所有 "Untitled" 为 "Loading"
+      document.addEventListener("DOMContentLoaded", function() {
+        document.body.innerHTML = document.body.innerHTML.replace(/\bUntitled\b/g, "Loading...");
+    });
     </script>
 </body>
 </html>
